@@ -5,20 +5,16 @@ fn main() {
     let mut last_number = lines[0].parse::<i32>().unwrap();
     let mut increase_amount = 0;
 
-    for (idx, line) in lines.iter().enumerate() {
+    for (_, line) in lines.iter().enumerate().skip(1) {
         let num = line.parse::<i32>().unwrap();
 
-        if idx == 0 {
-            last_number = num;
-        } else {
-            match num {
-                x if x  > last_number => {
-                    increase_amount += 1;
-                    last_number = num;
-                }
-                _ => {
-                    last_number = num;
-                }
+        match num {
+            x if x  > last_number => {
+                increase_amount += 1;
+                last_number = num;
+            }
+            _ => {
+                last_number = num;
             }
         }
 
