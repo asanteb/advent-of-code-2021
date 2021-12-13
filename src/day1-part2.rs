@@ -1,7 +1,7 @@
 mod line_reader;
 
 fn main() {
-    let lines = line_reader::vec_from_files("src/day1-input.txt");
+    let lines = line_reader::vec_from_files("inputs/day1-input.txt");
     let length = lines.len();
     let mut last_number: i32 = 0;
     let mut increase_amount = 0;
